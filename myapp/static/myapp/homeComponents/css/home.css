@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+body::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #393E46;
+    color: #EEEEEE;
+
+}
+
+.navbar_wrapper {
+    margin-top: 0;
+    width: 100vw;
+    /* padding: 0 2.5vw; */
+    background-color: #232931;
+    /* outline: 2px solid red; */
+    position: fixed;
+    height: 10vh;
+    z-index: 10;
+}
+
+.navbar_wrapper .navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar ul {
+    float: right;
+    list-style-type: none;
+    margin-top: 25px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #EEE;
+    padding: 5px 20px;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar img {
+    float: left;
+    height: 50px;
+    /* Adjust the height as needed */
+    padding: 10px;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #6b63ffbe;
+    color: black;
+}
+
+.navbar .login-btn {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.co_wrapper {
+    /* align-content: center; */
+    height: 90vh;
+    padding-top: 18vh;
+    /*change per req */
+    text-align: center;
+}
+
+.home_wrapper {
+    /* display: flex; */
+    /* align-content: space-evenly;
+    justify-content: center; */
+    padding-top: 10vh;
+}
+
+.heading_wrapper h2 {
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif, cursive; */
+    font-family: "Salsa", cursive;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 8vh;
+    color: #6C63FF !important;
+}
+
+.image_wrapper img {
+    height: 65vh;
+}
+
+.price_wrapper {
+    padding-top: 20vh;
+}
+
+.card_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.card_wrapper {
+    /* outline: 2px solid red; */
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5vw;
+    padding: 10vh;
+    perspective: 1000px;
+}
+
+.card {
+    border: 1px solid #2B1F31;
+    border-radius: 8px;
+    padding: 20px;
+
+    width: 300px;
+    text-align: left;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.card:hover {
+    transform: rotateY(8deg) scale(1.1);
+    box-shadow: 20px 20px 60px #808080,
+        -20px -20px 60px #6b63ff96;
+}
+
+.card h2 {
+    color: #6C63FF;
+}
+
+.card p {
+    color: #EEE;
+}
+
+.card p img {
+    height: 1em;
+}
+
+.card p span {
+    font-weight: bolder;
+}
+
+.price {
+    color: #699F4C;
+    font-weight: bold;
+}
+
+.about_wrapper {
+    margin-top: -30vh;
+}
+
+.about_wrapper h2 {
+    font-size: 6vh;
+}
+
+.hr_about {
+    margin-top: -5vh;
+    margin-bottom: 15vh;
+    width: 60vh;
+    border: 0.5px solid #E6E6E6;
+}
+
+.about_section {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.profile_card {
+    width: 17em;
+    height: 22.5em;
+    background: #E6E6E6;
+    transition: 1s ease-in-out;
+    clip-path: polygon(30px 0%,
+            100% 0,
+            100% calc(100% - 30px),
+            calc(100% - 30px) 100%,
+            0 100%,
+            0% 30px);
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile_card:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+}
+
+.profile_card span {
+    font-weight: bold;
+    color: #393E46;
+    text-align: center;
+    display: block;
+    font-size: 1em;
+}
+
+.profile_card .info {
+    font-weight: 400;
+    color: #393E46;
+    display: block;
+    text-align: center;
+    font-size: 0.72em;
+    margin: 1em;
+}
+
+.profile_card .img {
+    width: 4.8em;
+    height: 4.8em;
+    background: #393E46;
+    border-radius: 15px;
+    margin: auto;
+}
+.profile_card img{
+    width: 4.8em;
+    height: 4.8em;
+    border-radius: 15px;
+    margin: auto;
+}
+
+.profile_card .share {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.profile_card a {
+    color: #393E46;
+    transition: 0.4s ease-in-out;
+}
+
+.profile_card a:hover {
+    color: #6C63FF;
+}
+
+.profile_card button {
+    padding: 0.8em 1.7em;
+    display: block;
+    margin: auto;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    transition: 0.4s ease-in-out;
+}
+
+.profile_card button:hover {
+    background: #6C63FF;
+    color: white;
+    cursor: pointer;
+}
+
+.contact_wrapper {
+    background-color: #232931;
+    height: 70vh;
+    padding-top: 5vh !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact_wrapper a {
+    color: #E6E6E6;
+    text-decoration: none;
+}
+
+.contact_wrapper i {
+    color: #6C63FF;
+}
+
+.col {
+    grid-row: 1 / 2;
+    /* Place the item in the first row */
+    grid-column: 2 / 3;
+    /* Place the item in the second column */
+}
+
+.contact_wrapper button {
+    background-color: #6C63FF;
+    color: #E6E6E6;
+    padding: 1vw 1vh;
+    border-radius: 2vh;
+}
+
+.contact_wrapper button:hover {
+    background-color: #E6E6E6;
+}
+
+.contact_wrapper button:hover a {
+    color: #6C63FF;
+}
+
+.contact_para {
+    padding: 1vw 1vh;
+    font-weight: 200;
+}
+
+/* Media query to make the navbar responsive */
+@media screen and (max-width: 600px) {
+
+    .navbar a,
+    .navbar .login-btn {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .card_wrapper {
+        grid-template-columns: 1fr;
+        height: 350vh;
+    }
+
+    .contact_wrapper {
+        /* grid-template-rows: 100px; */
+        padding-top: 10vh !important;
+        grid-template-columns: 1fr;
+        height: calc(height(.card_wrapper)) + 110vh;
+    }
+}

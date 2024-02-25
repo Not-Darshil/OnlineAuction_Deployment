@@ -1,0 +1,78 @@
+{% extends "myapp/mainComponents/layout.html" %}
+{% load static %}
+{% block title %}Dashboard {% endblock title %}
+{% block head %}
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+{% endblock head %}
+
+{% block body %}
+<style>
+  .neo{
+    border-radius: 29px;
+    background: #e0e0e0;
+    box-shadow:  16px 16px 32px #8b8b8b,
+                -16px -16px 32px #ffffff;
+  }
+</style>
+<div class="container">
+    <div class="row">
+      {% for object in object %}
+        <div class="col-md-4 neo">
+          <div class="card mb-4 shadow-sm">
+            {% if object.image %}
+              <a href="{% url 'listingpage' object.id %}">
+                  <img  class="card-img-top" style="width: 100%; height: 15rem" src="{{ object.image }}" alt="{{ object.name }}">
+              </a>
+            {% else %}
+              <a href="{% url 'listingpage' object.id %}" >
+                  <img class="card-img-top" style="width: 100%; height: 15rem;" src="https://i.ibb.co/T8nxLQT/No-Image-Available.png" alt="No-Image" >
+              </a>
+            {% endif %} 
+
+            <!-- <img src="{{ object.image.url }}" class="card-img-top" alt="{{ object.name }}" style="width: 100; height: 15rem;"> -->
+            
+            <div class="card-body">
+              <h5 class="card-title">{{ object.name }}</h5>
+              <p class="card-text">{{ object.category }}</p>
+              <p class="card-text">{{ object.description }}</p>
+              <p class="card-text">Start Bid: Rs.{{ object.start_bid }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- Add a link to the product detail page or any other action you prefer -->
+                  <a href="#" class="btn btn-sm btn-outline-secondary">View Details</a>
+                </div>
+                <small class="text-muted">Listed by: {{ object.lister.username }}</small>
+              </div>
+            </div>
+            <div class="card-footer text-center">
+              <a href="#" class="btn btn-primary">Checkout</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+
+
+      {% endblock body %}
+
+
+
+
+
+
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+</head>
+<body>
+    <a href="{% url "user_logout" %}">Logout here</a>
+    
+</body>
+</html> {% endcomment %}

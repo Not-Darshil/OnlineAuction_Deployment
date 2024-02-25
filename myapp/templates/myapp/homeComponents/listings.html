@@ -1,0 +1,56 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listings | Auction Wave</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href={% static "myapp/homeComponents/css/listings.css" %}>
+
+</head>
+<body>
+  <div class="navbar_wrapper" style="z-index: 10;">
+    <div class="navbar">
+      <img src={% static "myapp/homeComponents/images/logo4.jpg" %} alt="Logo" />
+      <ul>
+        <li><a href="listings">Listings</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a href="/db.sqlite3">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <a class="login-btn" href="/my_login">Login</a>
+    </div>
+  </div>
+  
+
+<div class="container">
+    <div class="row">
+      {% for object in object %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="{{ object.image.url }}" class="card-img-top" alt="{{ object.name }}" style="width: 100; height: 15rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{ object.name }}</h5>
+              <p class="card-text">{{ object.category }}</p>
+              <p class="card-text">{{ object.description }}</p>
+              <p class="card-text">Start Bid: Rs.{{ object.start_bid }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <!-- Add a link to the product detail page or any other action you prefer -->
+                  <a href="/my_login" class="btn btn-sm btn-outline-secondary">Login to Check Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  
+</body>
+</html>

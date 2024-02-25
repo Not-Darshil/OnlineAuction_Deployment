@@ -1,0 +1,103 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/homeComponents/css/logout.css' %}">
+    <style>
+        .neo{
+            border-radius: 8px !important;
+            background: linear-gradient(145deg, #f0f0f0, #cacaca);
+            box-shadow:  6px 6px 7px #8b8b8b,
+                        -6px -6px 7px #ffffff;
+        }
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.mainbox {
+    border-radius: 87px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  6px 6px 7px #8b8b8b,
+                -6px -6px 7px #ffffff;
+    width: 350px;
+    margin: auto;
+    margin-top: 5em;
+}
+
+#subbox {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+form {
+    text-align: center;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+    </style>
+    
+</head>
+<body>
+    <div class="mainbox neo">
+        <div id="subbox">
+        {% if request.user.is_authenticated %}
+            <form method="post">
+                {% csrf_token %}
+                <h4>Are you sure want to logout?</h4>
+                <input type="submit" value="Yes,Logout"></input>
+            </form>
+        {% else %}
+            <h4>You're not logged in. Would you like to <a href="/my_login">Log In </a>?</h4>
+        {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>

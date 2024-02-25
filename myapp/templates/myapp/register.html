@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="{% static 'myapp/userComponents/css/register.css' %}">
+
+</head>
+<body>
+    <script>
+        function submitForm() {
+            var emailValue = document.getElementById("email").value;
+                if (emailValue.trim() !== "") {
+                alert("Check your email for the Authorization Link");
+            } else {
+                alert("Please enter your email before submitting.");
+            }
+            }
+    </script>
+    <h1>Register form</h1>
+    <form method="post" autocomplete="off">
+        {% csrf_token %}
+        
+        {{UserRegistrationForm.as_p }}
+        <input type="submit" onclick="submitForm()" value="Register" />
+    </form>
+    <br>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>

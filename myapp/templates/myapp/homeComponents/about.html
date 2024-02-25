@@ -1,0 +1,167 @@
+{% extends "myapp/base.html" %}
+
+{% load static %}
+{% block title %}About {% endblock title %}
+{% block head %}
+<script>
+    .container,
+.container - fluid,
+.container - xxl,
+.container - xl,
+.container - lg,
+.container - md,
+.container - sm {
+        --bs - gutter - x: 1.5rem;
+        --bs - gutter - y: 0;
+        width: 100 %;
+        padding - right: calc(var(--bs - gutter - x) * 0.5);
+        padding - left: calc(var(--bs - gutter - x) * 0.5);
+        margin - right: auto;
+        margin - left: auto;
+    }
+
+    @media(min - width: 576px) {
+  .container - sm, .container {
+            max - width: 540px;
+        }
+    }
+    @media(min - width: 768px) {
+  .container - md, .container - sm, .container {
+            max - width: 720px;
+        }
+    }
+    @media(min - width: 992px) {
+  .container - lg, .container - md, .container - sm, .container {
+            max - width: 960px;
+        }
+    }
+    @media(min - width: 1200px) {
+  .container - xl, .container - lg, .container - md, .container - sm, .container {
+            max - width: 1140px;
+        }
+    }
+    @media(min - width: 1400px) {
+  .container - xxl, .container - xl, .container - lg, .container - md, .container - sm, .container {
+            max - width: 1320px;
+        }
+    }
+.text - center {
+        text - align: center!important;
+    }
+.text - uppercase {
+        text - transform: uppercase!important;
+    }
+  section#contact.section - heading {
+        color: #fff;
+    }
+  .page - section h2.section - heading, .page - section.section - heading.h2 {
+        font - size: 2.5rem;
+        margin - top: 0;
+        margin - bottom: 1rem;
+    }
+.page - section h3.section - subheading, .page - section.section - subheading.h3 {
+        font - size: 1rem;
+        font - weight: 400;
+        font - style: italic;
+        font - family: "Roboto Slab", -apple - system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans - serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        margin - bottom: 4rem;
+    }
+  .text - muted {
+        --bs - text - opacity: 1;
+        color: #6c757d!important;
+    }
+  .row {
+        --bs - gutter - x: 1.5rem;
+        --bs - gutter - y: 0;
+        display: flex;
+        flex - wrap: wrap;
+        margin - top: calc(-1 * var(--bs - gutter - y));
+        margin - right: calc(-0.5 * var(--bs - gutter - x));
+        margin - left: calc(-0.5 * var(--bs - gutter - x));
+    }
+  .row > * {
+        flex- shrink: 0;
+    width: 100 %;
+    max - width: 100 %;
+    padding - right: calc(var(--bs - gutter - x) * 0.5);
+    padding - left: calc(var(--bs - gutter - x) * 0.5);
+    margin - top: var(--bs - gutter - y);
+  }
+  .col - lg - 4 {
+        flex: 0 0 auto;
+        width: 33.33333333 %;
+    }
+  .team - member {
+        margin - bottom: 3rem;
+        text - align: center;
+    }
+  .team - member img {
+        width: 14rem;
+        height: 14rem;
+        margin - left: 10 %;
+        border: 0.5rem solid rgba(0, 0, 0, 0.1);
+    }
+  .team - member h4, .team - member.h4 {
+        margin - top: 1.5rem;
+        margin - bottom: 0;
+    }
+  .rounded - circle {
+        border - radius: 50 % !important;
+    }
+  .mx - auto {
+        margin-right: auto!important;
+        margin-left: auto!important;
+    }
+  .col - lg - 8 {
+        flex: 0 0 auto;
+        width: 66.66666667 %;
+    }
+</script>{% endblock head %}
+
+{% block body %}
+<section>
+    <div class="container">
+        <div class="text-center">
+            <br>
+            <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <br><br><br><br><br>
+                    <img height=180rem class="mx-auto rounded-circle" src={% static "/myapp/images/darshil.jpg" %}
+                        alt="..." />
+                    <h4>Darshil Kumar</h4>
+                    <p class="text-muted">Web & Backend Developer</p>
+                </div>
+                <br>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <br><br><br><br><br>
+                    <img height=180rem class="mx-auto rounded-circle" src={% static "/myapp/images/singh.jpg" %}
+                        alt="..." />
+                    <h4>Ishmeet Singh Sodhi</h4>
+                    <p class="text-muted">Web Developer</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <br><br><br><br><br>
+                    <img height=180rem class="mx-auto rounded-circle" src={% static "/myapp/images/devansh.jpg" %}
+                        alt="..." />
+                    <h4>Devansh Singh</h4>
+                    <p class="text-muted">Synopsis</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque,
+                    laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my_login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/userComponents/css/my_login.css' %}">
+    <style>
+        .neo{
+            border-radius: 8px !important;
+            background: linear-gradient(145deg, #f0f0f0, #cacaca);
+            box-shadow:  6px 6px 7px #8b8b8b,
+                        -6px -6px 7px #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mainbox neo">
+        <div id="subbox">
+            <h1 id="heading">Login Form</h1><br>
+            {% if not request.user.is_authenticated %}
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}
+                    
+                    {{loginform.as_p}}
+                    <input type="submit" value="Login" />
+                </form>
+                <p>Don't have an account? <a href="/register">Register</a> </p>
+            {% else %}
+                <p>You're already logged in. Would you like to <a href="/logout ">Log Out </a>? or view <a href="/dashboard">Dashboard </a></p>
+            {% endif %}
+            <p><a href="/">Home</a></p>
+        </div>
+    </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+</body>
+</html>
